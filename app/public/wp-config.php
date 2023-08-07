@@ -82,16 +82,16 @@ if ( ! defined( 'WP_DEBUG' ) ) {
 	define( 'WP_DEBUG', false );
 }
 
-
-define('AUTH_KEY',         'ROeHJYqxvT/lcQyMaC7qW7xPrxenutGF50bRT8XBhdjqZtl3d6cX4pYIBsZqFHQVgtS7ERD6AA3kZ8IgrvQcpA==');
-define('SECURE_AUTH_KEY',  'gUeHYYQaalrWv7qPO8lDE93pn6gC7JN9Yi6iRkyMAz8qw1nkJ+CGwqaOBm2ZRCCbGF7TTKQ3ILRiiNxfFXUMsw==');
-define('LOGGED_IN_KEY',    'S4JCmX3ihq09CLook5Ho1jI+jVzbcnjNSU4uoLx8ycX6AIzpGb5l0v0dRd2PIyJg2z25oei7J7BmLwPAp4g1LQ==');
-define('NONCE_KEY',        'G+MPfiQPEoA+e9Zpny0qPfXnwdu72RZn7FbFkM1427tOGOal3wlXlBWWXiRjlCW8vkWQj3+hvMn5jZCpwzPPUw==');
-define('AUTH_SALT',        'x2Ln5UPLwT3FnD1qQnPFy/161p4pDoDLNsNI7a21oO01jG8o1uH9OibhGjKx4lBWTxhUDj7yy6eRsMjpPrEewQ==');
-define('SECURE_AUTH_SALT', 's/v05lGVJ6hLlV+6ulHc7tMZHQuFD+fji96wWzzNcMNFJcGqeVaO9j699FN3vxgCZg4uPq8QLyyXgeW5oMm8+A==');
-define('LOGGED_IN_SALT',   'yH3V7DSn3mcvcpBRzFO/98AEuA3CNPzAiqPYaE4pDohoZmqYxXEMuhSAOqoOdGBqoY4VNS0ersKc+Ma2ZV7++Q==');
-define('NONCE_SALT',       'NWwoGbjmwEYFda38dDzBLfjyFudN6XrEOzmbVl8IPNBx+FRygHpeFyRrULNYOeZyKr54dlyKVs8yfbyrUS2soQ==');
 define( 'WP_ENVIRONMENT_TYPE', 'local' );
+
+define('AUTH_KEY',         'Mhtcvq5AVksz4lB6UhT+GLUvn5nLMtkWtvyDvr9DBIdgpEXJShsacwg2bq+NoRHRNDJi4WMxjjRVb6lcIFJoaQ==');
+define('SECURE_AUTH_KEY',  'hLfI1M4AdDEtO/OTTlt4LrD4uVE6eBy7/bK1uxFuu+GN3a4l8eUx5hQaFOgq2abT1lbYoTh9dURQevwod/hZpA==');
+define('LOGGED_IN_KEY',    '1Ug/d7mMj31KjviT31wX0LR1j6BPuUM+NaqJcdaZ1tyKICqiOp85GJ4VTj2l26dnNRGMqC8NDodNIGIDdrUQCA==');
+define('NONCE_KEY',        'JqvegxhvraaWdDW3Qax6dFiA0CpQOw3KrxdMWeBZYQ+6R2X6H4nbNL95AOfWNk8ktkTHqRzRHNiEgI+R/NsL8A==');
+define('AUTH_SALT',        'ma+UWEsffZuYmYkshZONlArqDWMv4XXwkd6Q/ggXh9HA2+NJufcqOKTa5mcN0T/9gBGbUGnL59QwYlugzePorg==');
+define('SECURE_AUTH_SALT', 'M5OXmlLJ3ZIymM+UE1fopRtmjl8kOH7hOO4gCRCMtvSFv2CRmiFErkEWOEFosMtUUlQszw+6vvbsYhqGEcn5KA==');
+define('LOGGED_IN_SALT',   'a0cXRaqGchevv3JdyCKRf8HJYWLZqwI5NyvEyIDnX05Sc8SIQzLc2RqXzbsKWF9L4SNFFLoTE7+qscx8eXThCA==');
+define('NONCE_SALT',       'T7hN6mesHJczU5ljWKRDc7QYMZ5bciZG2VJrP4wOglZQDXcJGXmFeLyhSuWSoeqj1qajwb7PeoI5KpGN0c1TTQ==');
 /* That's all, stop editing! Happy publishing. */
 
 /** Absolute path to the WordPress directory. */
