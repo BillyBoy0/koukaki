@@ -4,10 +4,10 @@ get_header();
 ?>
 
     <main id="primary" class="site-main">
-        <section class="banner">
-            <img src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants">
+        <section class="banner slideInDown ">
+            <img src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " class="slideInUpx2" alt="logo Fleurs d'oranger & chats errants">
         </section>
-        <section id="#story" class="story">
+        <section id="#story" class="story slideInUp">
             <h2>L'histoire</h2>
             <article id="" class="story__article">
                 <p><?php echo get_theme_mod('story'); ?></p>
@@ -58,7 +58,7 @@ get_header();
         </section>
 
 
-        <section id="studio">
+        <section id="studio" class="slideInUp">
             <h2>Studio Koukaki</h2>
             <div>
                 <p>Acteur majeur de l’animation, Koukaki est un studio intégré fondé en 2012 qui créé, produit et distribue des programmes originaux dans plus de 190 pays pour les enfants et les adultes. Nous avons deux sections en activité : le long métrage et le court métrage. Nous développons des films fantastiques, principalement autour de la culture de notre pays natal, le Japon.</p>

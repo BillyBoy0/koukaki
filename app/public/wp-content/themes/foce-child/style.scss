@@ -20,6 +20,10 @@
     }
 }
 
+.slideInDown {
+    animation: slideInDown 2s;
+ }
+
 
 @keyframes slideInUp {
     from {
@@ -33,10 +37,47 @@
     }
 }
 
- .slideInUp {
+.slideInUp {
     animation: slideInUp 2s;
  }
 
- .slideInDown {
-    animation: slideInDown 2s;
+
+@keyframes slideInUpx2 {
+    from {
+        opacity: 0;
+        transform: translateY(240px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.slideInUpx2 {
+    animation: slideInUpx2 2s;
+ }
+
+
+@keyframes loop {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loop {
+    animation: loop 20s linear infinite;
+}
+
+
+
+
+
+
+
+ p {
+    position: sticky;
  }
