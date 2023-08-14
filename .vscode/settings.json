@@ -6,5 +6,6 @@
 
     }
 ],
-"liveSassCompile.settings.generateMap": false
+"liveSassCompile.settings.generateMap": false,
+"liveSassCompile.settings.forceBaseDirectory": ""
 }
