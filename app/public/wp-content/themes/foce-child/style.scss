@@ -15,13 +15,40 @@ ________________  */
 
 @keyframes slideInUp {
     from {
-        transform: translateY(120px);
+        transform: translateY(420px);
     }
 
     to {
         transform: translateY(0px);
     }
  }
+
+.animation-title {
+    position: relative;
+    animation:  fadeIn 1s;
+}
+
+
+
+
+
+
+ @keyframes fadeIn {
+    from {
+        opacity: 0;
+        bottom: -100px;
+    }
+
+    to {
+        opacity: 1;
+        bottom: 0px;
+    }
+ }
+
+
+
+
+
 
 
  @keyframes fadeInUp {
@@ -37,6 +64,10 @@ ________________  */
  }
 
 
+
+
+
+
  @keyframes fadeInUpx2 {
     from {
         opacity: 0;
@@ -48,6 +79,11 @@ ________________  */
         transform: translateY(0px);
     }
  }
+
+
+
+
+
 
  @keyframes fadeInDown {
     from {
@@ -61,7 +97,13 @@ ________________  */
     }
  }
 
- @keyframes loop {
+
+
+
+
+
+
+ @keyframes loop {                                      //Rotation fleurs basique
     from {
         transform: rotate(0);
     }
@@ -71,25 +113,117 @@ ________________  */
     }
  }
 
-@keyframes float {
+
+ @keyframes loop1 {                                         //Loop1, 3, 5  sont pour les fleurs du menu nav
+    from {
+        transform: translate(50%, 50%) rotate(0);
+    }
+
+    to {
+        transform: translate(50%, 50%) rotate(360deg)
+    }
+ }
+
+ @keyframes loop3 {
+    from {
+        transform: translateX(44%) rotate(0);
+    }
+
+    to {
+        transform: translateX(44%) rotate(360deg)
+    }
+ }
+
+ @keyframes loop5 {
+    from {
+        transform: translateX(-38%) rotate(0);
+    }
+
+    to {
+        transform: translateX(-38%) rotate(360deg)
+    }
+ }
+
+
+.loop {
+    animation: loop 20s linear infinite;
+}
+ 
+.loop1 {
+    animation: loop1 20s linear infinite;
+}
+
+.loop3 {
+    animation: loop3 20s linear infinite;
+}
+
+.loop5 {
+    animation: loop5 20s linear infinite;
+}
+
+
+
+
+
+@keyframes float {                                          //effets de flottements
   0%, 100% {
-    transform: translateX(0) translateY(0);
+    transform: translateX(0) translateY(0) rotateX(0);
   }
   25% {
-    transform: translateX(-5px) translateY(-8px);
+    transform: translateX(-8px) translateY(-13px) rotateX(12deg);
   }
   50% {
-    transform: translateX(8px) translateY(5px);
+    transform: translateX(16px) translateY(8px) rotateX(-8deg);
   }
   75% {
-    transform: translateX(-3px) translateY(-6px);
+    transform: translateX(-3px) translateY(-6px) rotateX(7deg);
   }
 }
 
-.slideInUp {
+.float {
+    animation: float 10s ease-in-out infinite;
+}
 
-    animation: slideInUpAnimation 1s ease forwards;
+
+@keyframes float1 {
+    0%, 100% {
+      transform: translateX(0) translateY(0);
+    }
+    35% {
+      transform: translateX(-8px) translateY(-15px);
+    }
+    55% {
+      transform: translateX(15px) translateY(2px);
+    }
+    88% {
+      transform: translateX(-6px) translateY(-12px);
+    }
   }
+
+  .float1 {
+    animation: float1 15s ease-in-out infinite;
+}
+  
+  @keyframes float2 {
+    0%, 100% {
+      transform: translateX(0) translateY(0);
+    }
+    15% {
+      transform: translateX(-17px) translateY(-9px);
+    }
+    44% {
+      transform: translateX(5px) translateY(8px);
+    }
+    66% {
+      transform: translateX(-8px) translateY(-1px);
+    }
+  }
+
+  .float2 {
+    animation: float2 15s ease-in-out infinite;
+}
+
+
 
 .fadeInUp{
     animation: fadeInUp 2s forwards;
@@ -139,11 +273,55 @@ ________________  */
 
 
 
+@media (min-width: 700px) {                     //MENU FERMÉ desktop
+
+.menu-toggle {
+    position: absolute;
+    top: 15px;
+    left: 90%;
+    display: block;
+}
+
+.main-navigation ul li, .main-navigation img{
+    display: none;
+}
 
 
-.main-navigation.toggled {
-    height: 100vh;
+.main-navigation a:hover {
+    color: black;
     
+}
+
+
+.main-navigation {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+}
+
+.main-navigation {
+    height: 61px;
+}
+
+
+
+
+
+
+
+.main-navigation.toggled {                      // MENU OUVERT desktop
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 0.7s forwards;
+    overflow: hidden;
+}
+
+.main-navigation.toggled h1 {
+    text-align: center;
 }
 
 .main-navigation.toggled ul {
@@ -151,16 +329,150 @@ ________________  */
 
 }
 
+
+.main-navigation.toggled li a {
+    font-size: 59px;
+    line-height: 13vh;
+    
+}
+
+.main-navigation.toggled li a:hover {
+    text-shadow: #FF5C00 0px 0 14px;
+}
+
+
+
+
+.main-navigation.toggled img {                      //Images du menu (fleurs et chats)
+    display: block;
+}
+
+.main-navigation.toggled .fleurNav, .chat1Nav, .chat2Nav, .chat3Nav {
+    position: absolute;
+} 
+
+
+
+.fleur1Nav {
+    bottom: 0px;
+    right: 0px;
+    transform: translate(50%, 50%);
+    height: 35vh;
+}
+
+.fleur2Nav {
+    top: 16%;
+    right: 18%;
+}
+
+.fleur3Nav {
+    height: 75px;
+    bottom: 52%;
+    right: 0;
+    transform: translateX(44%);
+}
+
+.fleur4Nav {
+    height: 66px;
+    bottom: 44%;
+    left: 16%;
+
+}
+
+.fleur5Nav {
+    height: 160px;
+    top: 11%;
+    transform: translateX(-38%);
+}
+
+.chat1Nav {
+    height: 90px;
+    bottom: 16%;
+    left: 4%;
+}
+
+.chat2Nav {
+    height: 120px;
+    bottom: 39%;
+    right: 15%;
+}
+
+.chat3Nav {
+    height: 99px;
+    top: 23%;
+    left: 17%;
+}
+
+
+
+.main-navigation.toggled .logoNav {
+    margin: auto;
+    padding: 32px 0;
+    height: 200px;
+}
+
+
+.main-navigation.toggled .koukakiNav {
+    margin: auto;
+    margin-top: 15vh;
+    height: 13px;
+}
+
 .main-navigation.toggled ul li{
     font-size: 35px;
     text-align: center;
+    
+    @media (min-width: 700px) {
+        .banner {
+            background-image: none;
+        }
+    }
+    display: block;
 }
 
 
 
 
 
+@media (max-width: 700px) {             // Menu responsive
+    h1 {
+        display: none;
+    }
+    .main-navigation {
+        height: 31px;
+    }
 
+    .fleur2Nav, .fleur4Nav, .fleur5Nav, .chat2Nav {
+        display: none!important;
+    }
+
+    .chat1Nav {
+        bottom: 24%;
+    }
+
+    .chat3Nav {
+        top: 10%;
+        left: 9%;
+    }
+
+    .fleur3Nav{
+        top: 12%;
+    }
+
+    .main-navigation.toggled ul li a {
+        font-size: 38px;
+    }
+
+    .main-navigation.toggled .koukakiNav {
+        display: none;
+    }
+
+    .main-navigation.toggled {
+        position: fixed;
+        top: 0;
+        
+    }
+}
 
 
 
@@ -178,24 +490,32 @@ ________________  */
 /* Banniere */
  
 .banner {
+    min-height: auto!important;
     animation: fadeInDown 2s;
     position: relative;
     top: 0px;
     width: 100%;
-    min-height: 60vh;
+    min-height: auto!important;
+    
 }
 
 .banner img {
-    animation: fadeInUpx2 2s, float 15s ease-in-out infinite;
+    animation: float 15s ease-in-out infinite;
+    width: 100%;
+    
+}
+
+.fadeInUpLogo {
+    position: absolute;
+    animation:  fadeInUpx2 2s;
     z-index: 2;
+    margin: auto;
+    width: 50%;
 }
 
 
-
 .banner video {
-    position: absolute;
     width: 100%;
-    height: 60vh;
     object-fit: cover;
     z-index: 0;
 }
@@ -214,6 +534,7 @@ ________________  */
 .story article::after {
     height: 188px;
     animation: loop 20s linear infinite;
+    
 
 }
 
@@ -239,6 +560,10 @@ ________________  */
 /*Swiper JS pour le caroussel
 ____________________________*/
 
+#characters {
+    overflow: hidden;
+}
+
 .story #characters {
     display: flex;
     flex-direction: column;
@@ -248,25 +573,27 @@ ____________________________*/
 
 .swiper {
     width: 100%;
-    padding-top: 50px;
+    margin-top: 50px;
 }
 
 .swiper-slide {
     background-position: center;
         background-size: cover;
-        margin-right: 40px;
-        margin-left: 40px;
+        width: 250px!important;
 
 }
 
-.swiper-wrapper {
-    margin: auto;
+.swiper-slide img {
+    display: block;
+    width: 100%;
 }
+
 
 // section Lieu & nuages
 
 .story #place {
 	background-image: url("./medias/Studio_Koukaki-image_place.png");
+    overflow: hidden;
 }
 
 .clouds {
@@ -346,22 +673,86 @@ ____________________*/
 
 @media (max-width: 920px) {
     .banner {
-        min-height: 50vh;
+        min-height: 40vh!important;
 
         video {
             height: 50vh;
         }
     
 
-        img {
+        .fadeInUpLogo {
             width: 60%;
         }
+    }
 
+    .story article::after {
+ 
+        display: none;
     }
 }
 
 @media (max-width: 700px) {
-    .banner video {
+    .banner video, .clouds {
+        display: none;
+    }
+
+    .chat1Nav {
+        bottom: 30%;
+    }
+
+    .story #characters {
+        margin-top: 0;
+    }
+
+    h2, h3 {
+        font-size: 2rem;
+    }
+    .oscars h3 {
+        width: 100%;
+        font-size: 24px!important;
+        padding: 10% 14%!important;
+    }
+
+    .oscars img {
+        padding: 8px 20%!important;
+        
+    }
+}
+
+
+@media (max-width: 1024px) {
+
+    .story #characters {
+        align-items: center;
+    }
+
+
+    .oscars {
+        flex-direction: column;
+        margin-top: 40px;
+    }
+
+    .slideInUp::before, .slideInUp::after {
+        display: none;
+    }
+
+    .oscars h3 {
+        width: 100%;
+        font-size: 40px;
+        padding-left: 9px;
+        text-align: center;
+        
+    }
+
+    .oscars img {
+        padding: 0 28%;
+        
+    }
+}
+
+
+@media (max-width: 1440px) {
+    .oscars h3::after {
         display: none;
     }
 }

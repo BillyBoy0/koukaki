@@ -9,7 +9,7 @@
             $characters_query = new WP_Query($args);
             ?>
             <article id="characters" class="scrollFade">
-                    <h3 class="slideInUp">Les personnages</h3>
+                    <h3 class="slideInUp main-character"><span>Les personnages</span></h3>
                     
 <div class="swiper ">
                         

@@ -1,16 +1,47 @@
 //  Menu BURGER
 
-// Récupérer le bouton du menu
-const menuToggle = document.querySelector(".menu-toggle");
-
-// Récupérer la liste du menu
-const menuList = document.querySelector("nav ul");
-
+$(document).ready(function() { //fermer le menu apres cliquer sur les liens
+    $(".main-navigation a").on("click", function() {
+        $(".menu-toggle").attr("aria-expanded", "false");
+        $("#site-navigation").removeClass("toggled");
+    });
+});
 
 
 
 
 /* Effet titres*/
+                     //Déclenchement Animation Titre sur les H2
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+        const titre = entry.target.querySelector('h2 span');
+              if (entry.isIntersecting) {
+            titre.classList.add('animation-title');
+            return; 
+        }
+          titre.classList.remove('animation-title');
+    });
+});
+
+  observer.observe(document.querySelector('.story'));
+  observer.observe(document.querySelector('#studio'));
+
+                      //Déclenchement Animation Titre sur les H3 */
+    const observer2 = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          const titre = entry.target.querySelector('h3 span');
+              if (entry.isIntersecting) {
+            titre.classList.add('animation-title')
+            return; 
+          }
+          titre.classList.remove('animation-title');
+    });
+});
+
+  observer2.observe(document.querySelector('#place'));
+  observer2.observe(document.querySelector('.main-character'));
+  observer2.observe(document.querySelector('.oscars'));
+
 
 
 
@@ -21,20 +52,18 @@ const swiper = new Swiper(".swiper", {
     allowTouchMove: false,
 
     slidesPerView: "auto",
-    speed: 1500,
+    speed: 1000,
     autoplay: {
         delay: 1000,
         disableOnInteraction: false,
     },
     loop: true,
     loopedSlides: 2,
-    loopAdditionalSlides: 1,
     effect: "coverflow",
     coverflowEffect: {
         slideShadows: false,
         rotate: 70,
-        stretch: 0,
-        depth: 50,
+        stretch: -130,
         modifier: 1, 
     },
 });
@@ -70,6 +99,7 @@ document.addEventListener("DOMContentLoaded", function() {
 const cloudsElements = document.querySelectorAll('.clouds');
 const section = document.getElementById('place');
 const triggerOffset = -700; // Ajustez cette valeur en pixels selon votre besoin
+const maxTranslation = 300; // La limite de translation vers la gauche
 
 window.addEventListener('scroll', () => {
     const sectionTop = section.offsetTop;
@@ -77,7 +107,10 @@ window.addEventListener('scroll', () => {
     const scrollPosition = window.scrollY + window.innerHeight;
 
     if (scrollPosition >= sectionBottom - triggerOffset) {
-        const offsetX = (scrollPosition - (sectionBottom - triggerOffset)) / window.innerHeight * 500;
+        const offsetX = Math.min(
+            maxTranslation,
+            (scrollPosition - (sectionBottom - triggerOffset)) / window.innerHeight * 500
+        );
 
         cloudsElements.forEach(clouds => {
             clouds.style.transform = `translateX(-${offsetX}px)`;
